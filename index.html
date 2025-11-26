@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvoiceFlow - Professional Invoicing Made Simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Background Gradients -->
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+    <header class="glass-header">
+      <nav class="container">
+        <div class="logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">InvoiceFlow</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="btn-text">Log in</a>
+          <a href="#" class="btn-primary">Get Started</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+      <div class="hero-content">
+        <h1 class="hero-title">Create Professional <span class="text-gradient">Invoices</span> in Seconds</h1>
+        <p class="hero-subtitle">The easiest way for freelancers and small businesses to generate quotes, track
+          payments, and look professional.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary btn-lg">Create Free Invoice</a>
+          <a href="#" class="btn-secondary btn-lg">View Demo</a>
+        </div>
+        <div class="trust-badges">
+          <span>No credit card required</span>
+          <span class="dot">•</span>
+          <span>Free forever plan</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="invoice-preview glass-card">
+          <!-- CSS-only Invoice Mockup -->
+          <div class="mockup-header">
+            <div class="mockup-logo"></div>
+            <div class="mockup-title">INVOICE</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-row"></div>
+            <div class="mockup-row"></div>
+            <div class="mockup-row short"></div>
+          </div>
+          <div class="mockup-total">
+            <span>Total</span>
+            <span>$1,250.00</span>
+          </div>
+        </div>
+        <div class="floating-badge badge-1 glass-card">
+          <span>✓ Paid</span>
+        </div>
+        <div class="floating-badge badge-2 glass-card">
+          <span>Sent</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features container">
+      <div class="section-header">
+        <h2>Everything you need to get paid</h2>
+        <p>Simple tools for powerful results.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="feature-icon">📄</div>
+          <h3>PDF Export</h3>
+          <p>Download professional PDF invoices with one click. Send them directly to your clients.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Custom Branding</h3>
+          <p>Add your logo, brand colors, and personal touch to every invoice you send.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">🧮</div>
+          <h3>Auto Calculations</h3>
+          <p>Taxes, discounts, and totals are calculated automatically. No more math errors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="logo-text">InvoiceFlow</span>
+            <p>© 2024 InvoiceFlow. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Invoice Editor (Hidden by default) -->
+    <div id="invoice-editor" class="invoice-editor hidden">
+      <div class="container">
+        <div class="editor-header">
+          <button id="back-to-home" class="btn-secondary">← Back</button>
+          <div class="editor-actions">
+            <button id="print-invoice" class="btn-primary">Download / Print PDF</button>
+          </div>
+        </div>
+
+        <div class="invoice-paper glass-card">
+          <div class="invoice-top">
+            <div class="invoice-brand-upload">
+              <div class="upload-placeholder">
+                <span>+ Add Logo</span>
+                <input type="file" id="logo-upload" accept="image/*">
+              </div>
+              <img id="logo-preview" class="hidden" src="" alt="Logo">
+            </div>
+            <div class="invoice-title-section">
+              <h1 class="editable" contenteditable="true">INVOICE</h1>
+              <div class="input-group">
+                <label>#</label>
+                <input type="text" value="INV-001">
+              </div>
+            </div>
+          </div>
+
+          <div class="invoice-details-grid">
+            <div class="from-section">
+              <h3>From</h3>
+              <input type="text" placeholder="Your Business Name" class="input-lg">
+              <textarea placeholder="Your Address&#10;City, State, Zip&#10;Email"></textarea>
+            </div>
+            <div class="to-section">
+              <h3>Bill To</h3>
+              <input type="text" placeholder="Client Name" class="input-lg">
+              <textarea placeholder="Client Address&#10;City, State, Zip&#10;Email"></textarea>
+            </div>
+            <div class="meta-section">
+              <div class="meta-row">
+                <label>Date</label>
+                <input type="date" id="invoice-date">
+              </div>
+              <div class="meta-row">
+                <label>Due Date</label>
+                <input type="date" id="due-date">
+              </div>
+            </div>
+          </div>
+
+          <div class="items-table">
+            <div class="table-header">
+              <div class="col-desc">Description</div>
+              <div class="col-qty">Qty</div>
+              <div class="col-rate">Rate</div>
+              <div class="col-amount">Amount</div>
+              <div class="col-action"></div>
+            </div>
+            <div id="items-list">
+              <!-- Items will be added here -->
+            </div>
+            <button id="add-item-btn" class="btn-text">+ Add Item</button>
+          </div>
+
+          <div class="invoice-summary">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (%)</span>
+              <input type="number" id="tax-rate" value="0" min="0" max="100">
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="total-amount">$0.00</span>
+            </div>
+          </div>
+
+          <div class="invoice-notes">
+            <label>Notes</label>
+            <textarea placeholder="Thank you for your business! Payment is due within 30 days."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
